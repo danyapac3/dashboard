@@ -1,1 +1,92 @@
 @import url("reset.css");
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+:root {
+  --primary-blue: rgb(25, 120, 245);
+}
+
+.container {
+  min-height: 100%;
+
+  display: grid;
+  grid-template-areas: 
+    "sidebar topbar"
+    "sidebar actionbar"
+    "sidebar maincontent";
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto auto 1fr;
+}
+
+.sidebar {
+  background-color: var(--primary-blue);
+  padding: 16px;
+  position: relative;
+  
+  grid-area: sidebar;
+  
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 32px;
+  overflow: hidden;
+}
+
+.sidebar__logo {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.sidebar__logo img {
+  width: 48px;
+  height: 48px;
+  filter: invert();
+}
+
+.sidebar__options-group {
+  width: 100%;
+}
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.sidebar__link:hover {
+  text-decoration: underline;
+}
+
+.label {
+  text-overflow: ellipsis;
+  min-width: 0px;
+  overflow: hidden;
+}
+
+.sidebar__link img {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  filter: invert();
+}
+
+.sidebar__toggle-button {
+  position: absolute;
+  right: -1050;
+  top: 0;
+  
+}
