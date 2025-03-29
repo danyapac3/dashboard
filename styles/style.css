@@ -17,10 +17,10 @@ body {
 
   display: grid;
   grid-template-areas: 
-    "sidebar topbar"
+    "sidebar header"
     "sidebar actionbar"
     "sidebar maincontent";
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 300px minmax(0px, 1fr);
   grid-template-rows: auto auto 1fr;
 }
 
@@ -44,7 +44,7 @@ body {
   align-items: center;
   
   color: white;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 600;
 }
 
@@ -63,7 +63,7 @@ body {
   gap: 16px;
 
   color: white;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
@@ -84,9 +84,66 @@ body {
   filter: invert();
 }
 
-.sidebar__toggle-button {
-  position: absolute;
-  right: -1050;
-  top: 0;
-  
+.header {
+  grid-area: header;
+  align-self: start;
+
+  padding: 16px 32px;
+
+  min-width: 0px;
+}
+
+.header__container {
+  align-items: center;
+  display: flex;
+}
+
+.header__search-icon {
+  width: 24px;
+  height: 24px;
+}
+.header__search-icon:not(:last-child) {
+  margin-right: 8px;
+}
+.header__searchbox {
+  border: none;
+  background-color: rgb(219, 225, 228);
+  outline: none;
+  height: 32px;
+  font-size: 24px;
+  line-height: 32px;
+  padding: 0 16px;
+  border-radius: 999px;
+  width: 320px;
+  min-width: 120px;
+}
+.header__searchbox:not(:last-child) {
+  margin-right: auto; 
+}
+
+.header__searchbox:focus {
+  outline: black 3px solid;
+}
+.header__ring-icon {
+  width: 24px;
+  height: 24px;
+}
+.header__ring-icon:not(:first-child) {
+  margin-left: 24px;
+}
+.header__ring-icon:not(:last-child) {
+  margin-right: 24px;
+}
+.header__profile-photo {
+  object-fit: cover;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+.header__profile-photo:not(last-child) {
+  margin-right: 32px;
+}
+.header__profile-name {
+  font-size: 24px;
+  font-weight: 600;
 }
